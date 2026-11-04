@@ -1,5 +1,7 @@
-import { ArrowRight, ArrowUpRight, Check, ChartNoAxesCombined, ImagePlus, Clock3, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, ChartNoAxesCombined, Clock3, Sparkles } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
+import founderPhoto from '@/assets/carlos-henrique-lemos.png.asset.json';
 import { authority, problems, solutions, methodology, channels, cases } from './content';
 import performanceImage from '@/assets/chl-performance.jpg';
 
@@ -12,7 +14,7 @@ export function Problems() {
 }
 
 export function Solutions({ onContact }: { onContact: () => void }) {
-  return <section id="solucoes" className="section-chl solutions-section"><div className="container-chl"><div className="section-heading"><div><span className="eyebrow">SOLUÇÕES CHL DIGITAL</span><h2>Estratégia na direção.<br />Gestão na prática.</h2></div><a href="#contato" className="section-link">Encontre a solução para o seu negócio <ArrowUpRight /></a></div><div className="solutions-grid">{solutions.map(({ icon: Icon, title, text, tags }) => <article className="solution-card" key={title}><div className="solution-icon"><Icon strokeWidth={1.5} /></div><h3>{title}</h3><p>{text}</p><div className="solution-tags">{tags}</div><Button variant="link" onClick={onContact} className="solution-action">Vamos conversar <ArrowUpRight /></Button></article>)}</div></div></section>;
+  return <section id="solucoes" className="section-chl solutions-section"><div className="container-chl"><div className="section-heading"><div><span className="eyebrow">SOLUÇÕES CHL DIGITAL</span><h2>Estratégia na direção.<br />Gestão na prática.</h2></div><Link to="/contato" className="section-link">Encontre a solução para o seu negócio <ArrowUpRight /></Link></div><div className="solutions-grid">{solutions.map(({ icon: Icon, title, text, tags }) => <article className="solution-card" key={title}><div className="solution-icon"><Icon strokeWidth={1.5} /></div><h3>{title}</h3><p>{text}</p><div className="solution-tags">{tags}</div><Button variant="link" onClick={onContact} className="solution-action">Vamos conversar <ArrowUpRight /></Button></article>)}</div></div></section>;
 }
 
 export function Methodology() {
@@ -36,9 +38,9 @@ export function Cases() {
 }
 
 export function About() {
-  return <section id="sobre" className="section-chl"><div className="container-chl about-grid"><div className="founder-placeholder"><span className="eyebrow">À FRENTE DA CHL DIGITAL</span><span className="founder-monogram" aria-hidden="true">CHL.</span><div className="founder-caption"><ImagePlus /> Espaço reservado para foto profissional do fundador</div></div><div className="about-copy"><span className="eyebrow">SOBRE A CHL DIGITAL</span><h2>Experiência prática.<br />Estratégia orientada<br />a resultado.</h2><p>A CHL Digital nasceu da experiência prática em gestão de marketplaces e operações de e-commerce. Nosso trabalho conecta estratégia, operação e performance para transformar canais digitais em negócios mais previsíveis e escaláveis.</p><p>Uma consultoria próxima da sua realidade, com leitura de negócio, clareza nas prioridades e compromisso com uma gestão consistente.</p><div className="founder-name">Carlos Henrique Lemos</div><div className="founder-role">Fundador e consultor · CHL Digital</div></div></div></section>;
+  return <section id="sobre" className="section-chl"><div className="container-chl about-grid"><figure className="founder-photo"><img src={founderPhoto.url} alt="Carlos Henrique Lemos, fundador da CHL Digital" width={1145} height={1374} loading="lazy" /></figure><div className="about-copy"><span className="eyebrow">SOBRE A CHL DIGITAL</span><h2>Experiência prática.<br />Estratégia orientada<br />a resultado.</h2><p>A CHL Digital nasceu da experiência prática em gestão de marketplaces e operações de e-commerce. Nosso trabalho conecta estratégia, operação e performance para transformar canais digitais em negócios mais previsíveis e escaláveis.</p><p>Uma consultoria próxima da sua realidade, com leitura de negócio, clareza nas prioridades e compromisso com uma gestão consistente.</p><div className="founder-name">Carlos Henrique Lemos</div><div className="founder-role">Fundador e consultor · CHL Digital</div></div></div></section>;
 }
 
 export function FinalCTA({ onContact }: { onContact: () => void }) {
-  return <section id="contato" className="final-cta"><div className="container-chl final-cta-inner"><div><span className="eyebrow">VAMOS CONSTRUIR O PRÓXIMO PASSO</span><h2>Seu marketplace pode<br />ser mais estratégico.</h2><p>Transforme os desafios da sua operação em um plano claro de crescimento, rentabilidade e escala.</p></div><div className="final-actions"><Button variant="hero" onClick={onContact}>Falar com a CHL Digital <ArrowUpRight /></Button><Button variant="heroOutline" onClick={onContact}>Solicitar diagnóstico <ArrowRight /></Button></div></div></section>;
+  return <section id="contato" className="final-cta"><div className="container-chl final-cta-inner"><div><span className="eyebrow">VAMOS CONSTRUIR O PRÓXIMO PASSO</span><h2>Seu marketplace pode<br />ser mais estratégico.</h2><p>Transforme os desafios da sua operação em um plano claro de crescimento, rentabilidade e escala.</p></div><div className="final-actions"><Button variant="hero" onClick={onContact}>Falar com a CHL Digital <ArrowUpRight /></Button><Button variant="heroOutline" asChild><Link to="/contato">Solicitar diagnóstico <ArrowRight /></Link></Button></div></div></section>;
 }

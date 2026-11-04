@@ -25,3 +25,11 @@ export const methodology = [
 ];
 export const channels = ['Mercado Livre', 'Shopee', 'Amazon', 'Magalu', 'Leroy Merlin', 'TikTok Shop'];
 export const cases = [{ title: 'Marketplace', category: 'Crescimento', icon: TrendingUp }, { title: 'Performance', category: 'Rentabilidade', icon: BarChart3 }, { title: 'Estruturação', category: 'Escala', icon: Settings2 }];
+export const contactInfo = {
+  whatsappNumber: '5511963807622',
+  whatsappDisplay: '+55 11 96380-7622',
+  whatsappMessage: 'Olá! Vim pelo site e quero falar com a CHL Digital.',
+  email: 'contato@chldigital.com.br',
+};
+
+export const whatsappUrl = () => `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(contactInfo.whatsappMessage)}`;
